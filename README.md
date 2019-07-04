@@ -1,6 +1,5 @@
-# Gulp 4 Starter
-This is a basic starting point to for a project using Gulp 4. Nothing fancy just compling SCSS and watching file changes
-to update the browser.
+# Bootstrap 4 + Gulp 4 Starter
+This is a basic starting point to for a project using Bootstrap 4 with a Gulp 4 build system. Nothing too fancy just compiling SCSS and watching file changes to update the browser. Also uses PurgeCSS for the build command to remove unused CSS.
 
 ## Configuration References:
 
