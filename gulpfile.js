@@ -23,7 +23,6 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const clean = require("gulp-clean");
 const purgecss = require("gulp-purgecss");
-const stripCssComments = require("gulp-strip-css-comments");
 const cssnano = require("gulp-cssnano");
 const browserSync = require("browser-sync").create();
 
@@ -59,13 +58,10 @@ function build() {
                 })
             )
 
-            // 3. Remove comments:
-            .pipe(stripCssComments())
-
-            // 4. Minify files:
+            // 3. Minify files:
             .pipe(cssnano())
 
-            // 5. Replace original files with minified:
+            // 4. Replace original files with minified:
             .pipe(gulp.dest("./dist/css"))
     );
 }
