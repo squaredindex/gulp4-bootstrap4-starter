@@ -54,7 +54,9 @@ function build() {
             // 2. Remove unused CSS:
             .pipe(
                 purgecss({
-                    content: ["./**/*.html"]
+                    content: ["./**/*.html"],
+                    whitelistPatterns: [/active$/],
+                    whitelistPatternsChildren: [/active$/]
                 })
             )
 
