@@ -54,7 +54,8 @@ function build() {
             // 2. Remove unused CSS:
             .pipe(
                 purgecss({
-                    content: ["./**/*.html"],
+                    content: ["./**/*.php", "./**/*.html"],
+                    whitelist: [".active"],
                     whitelistPatterns: [/active$/],
                     whitelistPatternsChildren: [/active$/]
                 })
@@ -82,6 +83,7 @@ function watch() {
     gulp.watch("./src/scss/**/*.scss", style);
     gulp.watch("./src/js/**/*.js").on("change", browserSync.reload);
     gulp.watch("./**/*.html").on("change", browserSync.reload);
+    gulp.watch("./**/*.php").on("change", browserSync.reload);
 }
 
 /* Remove all compiled files */
